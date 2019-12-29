@@ -1,2 +1,84 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[2],{284:function(e,n){e.exports=function(e){var n="^[a-zA-Z][a-zA-Z0-9-]*",s="[!@#$^&',?+~`|:]",a=e.COMMENT(";","$"),i={begin:n+"\\s*=",returnBegin:!0,end:/=/,relevance:0,contains:[{className:"attribute",begin:n}]};return{illegal:s,keywords:["ALPHA","BIT","CHAR","CR","CRLF","CTL","DIGIT","DQUOTE","HEXDIG","HTAB","LF","LWSP","OCTET","SP","VCHAR","WSP"].join(" "),contains:[i,a,{className:"symbol",begin:/%b[0-1]+(-[0-1]+|(\.[0-1]+)+){0,1}/},{className:"symbol",begin:/%d[0-9]+(-[0-9]+|(\.[0-9]+)+){0,1}/},{className:"symbol",begin:/%x[0-9A-F]+(-[0-9A-F]+|(\.[0-9A-F]+)+){0,1}/},{className:"symbol",begin:/%[si]/},e.QUOTE_STRING_MODE,e.NUMBER_MODE]}}}}]);
-//# sourceMappingURL=abnf.js.map?v=26c106069f30a6cbd6da
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/abnf"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/abnf.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/abnf.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+    var regexes = {
+        ruleDeclaration: "^[a-zA-Z][a-zA-Z0-9-]*",
+        unexpectedChars: "[!@#$^&',?+~`|:]"
+    };
+
+    var keywords = [
+        "ALPHA",
+        "BIT",
+        "CHAR",
+        "CR",
+        "CRLF",
+        "CTL",
+        "DIGIT",
+        "DQUOTE",
+        "HEXDIG",
+        "HTAB",
+        "LF",
+        "LWSP",
+        "OCTET",
+        "SP",
+        "VCHAR",
+        "WSP"
+    ];
+
+    var commentMode = hljs.COMMENT(";", "$");
+
+    var terminalBinaryMode = {
+        className: "symbol",
+        begin: /%b[0-1]+(-[0-1]+|(\.[0-1]+)+){0,1}/
+    };
+
+    var terminalDecimalMode = {
+        className: "symbol",
+        begin: /%d[0-9]+(-[0-9]+|(\.[0-9]+)+){0,1}/
+    };
+
+    var terminalHexadecimalMode = {
+        className: "symbol",
+        begin: /%x[0-9A-F]+(-[0-9A-F]+|(\.[0-9A-F]+)+){0,1}/,
+    };
+
+    var caseSensitivityIndicatorMode = {
+        className: "symbol",
+        begin: /%[si]/
+    };
+
+    var ruleDeclarationMode = {
+        begin: regexes.ruleDeclaration + '\\s*=',
+        returnBegin: true,
+        end: /=/,
+        relevance: 0,
+        contains: [{className: "attribute", begin: regexes.ruleDeclaration}]
+    };
+
+    return {
+      illegal: regexes.unexpectedChars,
+      keywords: keywords.join(" "),
+      contains: [
+          ruleDeclarationMode,
+          commentMode,
+          terminalBinaryMode,
+          terminalDecimalMode,
+          terminalHexadecimalMode,
+          caseSensitivityIndicatorMode,
+          hljs.QUOTE_STRING_MODE,
+          hljs.NUMBER_MODE
+      ]
+    };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=abnf.js.map?v=ed45f76c7e8586d3753d

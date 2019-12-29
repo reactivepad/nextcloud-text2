@@ -1,2 +1,36 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[137],{419:function(e,s){e.exports=function(e){return{aliases:["k","kdb"],keywords:{keyword:"do while select delete by update from",literal:"0b 1b",built_in:"neg not null string reciprocal floor ceiling signum mod xbar xlog and or each scan over prior mmu lsq inv md5 ltime gtime count first var dev med cov cor all any rand sums prds mins maxs fills deltas ratios avgs differ prev next rank reverse iasc idesc asc desc msum mcount mavg mdev xrank mmin mmax xprev rotate distinct group where flip type key til get value attr cut set upsert raze union inter except cross sv vs sublist enlist read0 read1 hopen hclose hdel hsym hcount peach system ltrim rtrim trim lower upper ssr view tables views cols xcols keys xkey xcol xasc xdesc fkeys meta lj aj aj0 ij pj asof uj ww wj wj1 fby xgroup ungroup ej save load rsave rload show csv parse eval min max avg wavg wsum sin cos tan sum",type:"`float `double int `timestamp `timespan `datetime `time `boolean `symbol `char `byte `short `long `real `month `date `minute `second `guid"},lexemes:/(`?)[A-Za-z0-9_]+\b/,contains:[e.C_LINE_COMMENT_MODE,e.QUOTE_STRING_MODE,e.C_NUMBER_MODE]}}}}]);
-//# sourceMappingURL=q.js.map?v=ff2a2099c413298b6216
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/q"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/q.js":
+/*!******************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/q.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var Q_KEYWORDS = {
+  keyword:
+    'do while select delete by update from',
+  literal:
+    '0b 1b',
+  built_in:
+    'neg not null string reciprocal floor ceiling signum mod xbar xlog and or each scan over prior mmu lsq inv md5 ltime gtime count first var dev med cov cor all any rand sums prds mins maxs fills deltas ratios avgs differ prev next rank reverse iasc idesc asc desc msum mcount mavg mdev xrank mmin mmax xprev rotate distinct group where flip type key til get value attr cut set upsert raze union inter except cross sv vs sublist enlist read0 read1 hopen hclose hdel hsym hcount peach system ltrim rtrim trim lower upper ssr view tables views cols xcols keys xkey xcol xasc xdesc fkeys meta lj aj aj0 ij pj asof uj ww wj wj1 fby xgroup ungroup ej save load rsave rload show csv parse eval min max avg wavg wsum sin cos tan sum',
+  type:
+    '`float `double int `timestamp `timespan `datetime `time `boolean `symbol `char `byte `short `long `real `month `date `minute `second `guid'
+  };
+  return {
+  aliases:['k', 'kdb'],
+  keywords: Q_KEYWORDS,
+  lexemes: /(`?)[A-Za-z0-9_]+\b/,
+  contains: [
+  hljs.C_LINE_COMMENT_MODE,
+    hljs.QUOTE_STRING_MODE,
+    hljs.C_NUMBER_MODE
+     ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=q.js.map?v=1528ce832008dcd6a243

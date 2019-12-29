@@ -1,2 +1,75 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[168],{450:function(n,e){n.exports=function(n){var e={className:"tag",begin:/\\/,relevance:0,contains:[{className:"name",variants:[{begin:/[a-zA-Z\u0430-\u044f\u0410-\u042f]+[*]?/},{begin:/[^a-zA-Z\u0430-\u044f\u0410-\u042f0-9]/}],starts:{endsWithParent:!0,relevance:0,contains:[{className:"string",variants:[{begin:/\[/,end:/\]/},{begin:/\{/,end:/\}/}]},{begin:/\s*=\s*/,endsWithParent:!0,relevance:0,contains:[{className:"number",begin:/-?\d*\.?\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?/}]}]}}]};return{contains:[e,{className:"formula",contains:[e],relevance:0,variants:[{begin:/\$\$/,end:/\$\$/},{begin:/\$/,end:/\$/}]},n.COMMENT("%","$",{relevance:0})]}}}}]);
-//# sourceMappingURL=tex.js.map?v=652293cc62e7fdb21be1
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/tex"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/tex.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/tex.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var COMMAND = {
+    className: 'tag',
+    begin: /\\/,
+    relevance: 0,
+    contains: [
+      {
+        className: 'name',
+        variants: [
+          {begin: /[a-zA-Z\u0430-\u044f\u0410-\u042f]+[*]?/},
+          {begin: /[^a-zA-Z\u0430-\u044f\u0410-\u042f0-9]/}
+        ],
+        starts: {
+          endsWithParent: true,
+          relevance: 0,
+          contains: [
+            {
+              className: 'string', // because it looks like attributes in HTML tags
+              variants: [
+                {begin: /\[/, end: /\]/},
+                {begin: /\{/, end: /\}/}
+              ]
+            },
+            {
+              begin: /\s*=\s*/, endsWithParent: true,
+              relevance: 0,
+              contains: [
+                {
+                  className: 'number',
+                  begin: /-?\d*\.?\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?/
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  };
+
+  return {
+    contains: [
+      COMMAND,
+      {
+        className: 'formula',
+        contains: [COMMAND],
+        relevance: 0,
+        variants: [
+          {begin: /\$\$/, end: /\$\$/},
+          {begin: /\$/, end: /\$/}
+        ]
+      },
+      hljs.COMMENT(
+        '%',
+        '$',
+        {
+          relevance: 0
+        }
+      )
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=tex.js.map?v=91991fefe3a2a4673a90

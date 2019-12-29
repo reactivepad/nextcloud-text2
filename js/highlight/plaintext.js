@@ -1,2 +1,19 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[126],{408:function(t,e){t.exports=function(t){return{disableAutodetect:!0}}}}]);
-//# sourceMappingURL=plaintext.js.map?v=8508b504be179d0f1b14
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/plaintext"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/plaintext.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/plaintext.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+    return {
+        disableAutodetect: true
+    };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=plaintext.js.map?v=fd12b7c010b92ea5923a

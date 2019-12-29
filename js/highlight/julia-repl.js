@@ -1,2 +1,37 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[88],{369:function(e,n){e.exports=function(e){return{contains:[{className:"meta",begin:/^julia>/,relevance:10,starts:{end:/^(?![ ]{6})/,subLanguage:"julia"},aliases:["jldoctest"]}]}}}}]);
-//# sourceMappingURL=julia-repl.js.map?v=304a1fe801214c4f920e
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/julia-repl"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/julia-repl.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/julia-repl.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  return {
+    contains: [
+      {
+        className: 'meta',
+        begin: /^julia>/,
+        relevance: 10,
+        starts: {
+          // end the highlighting if we are on a new line and the line does not have at
+          // least six spaces in the beginning
+          end: /^(?![ ]{6})/,
+          subLanguage: 'julia'
+      },
+      // jldoctest Markdown blocks are used in the Julia manual and package docs indicate
+      // code snippets that should be verified when the documentation is built. They can be
+      // either REPL-like or script-like, but are usually REPL-like and therefore we apply
+      // julia-repl highlighting to them. More information can be found in Documenter's
+      // manual: https://juliadocs.github.io/Documenter.jl/latest/man/doctests.html
+      aliases: ['jldoctest']
+      }
+    ]
+  }
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=julia-repl.js.map?v=f9bd55c44a1a6adc861c

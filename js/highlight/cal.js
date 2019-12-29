@@ -1,2 +1,93 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[23],{305:function(e,n){e.exports=function(e){var n="div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to until while with var",a=[e.C_LINE_COMMENT_MODE,e.COMMENT(/\{/,/\}/,{relevance:0}),e.COMMENT(/\(\*/,/\*\)/,{relevance:10})],s={className:"string",begin:/'/,end:/'/,contains:[{begin:/''/}]},r={className:"string",begin:/(#\d+)+/},i={className:"function",beginKeywords:"procedure",end:/[:;]/,keywords:"procedure|10",contains:[e.TITLE_MODE,{className:"params",begin:/\(/,end:/\)/,keywords:n,contains:[s,r]}].concat(a)},o={className:"class",begin:"OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\d+) ([^\\r\\n]+)",returnBegin:!0,contains:[e.TITLE_MODE,i]};return{case_insensitive:!0,keywords:{keyword:n,literal:"false true"},illegal:/\/\*/,contains:[s,r,{className:"number",begin:"\\b\\d+(\\.\\d+)?(DT|D|T)",relevance:0},{className:"string",begin:'"',end:'"'},e.NUMBER_MODE,o,i]}}}}]);
-//# sourceMappingURL=cal.js.map?v=f6b68007a3d7d6a75f60
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/cal"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/cal.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/cal.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var KEYWORDS =
+    'div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to ' +
+    'until while with var';
+  var LITERALS = 'false true';
+  var COMMENT_MODES = [
+    hljs.C_LINE_COMMENT_MODE,
+    hljs.COMMENT(
+      /\{/,
+      /\}/,
+      {
+        relevance: 0
+      }
+    ),
+    hljs.COMMENT(
+      /\(\*/,
+      /\*\)/,
+      {
+        relevance: 10
+      }
+    )
+  ];
+  var STRING = {
+    className: 'string',
+    begin: /'/, end: /'/,
+    contains: [{begin: /''/}]
+  };
+  var CHAR_STRING = {
+    className: 'string', begin: /(#\d+)+/
+  };
+  var DATE = {
+      className: 'number',
+      begin: '\\b\\d+(\\.\\d+)?(DT|D|T)',
+      relevance: 0
+  };
+  var DBL_QUOTED_VARIABLE = {
+      className: 'string', // not a string technically but makes sense to be highlighted in the same style
+      begin: '"',
+      end: '"'
+  };
+
+  var PROCEDURE = {
+    className: 'function',
+    beginKeywords: 'procedure', end: /[:;]/,
+    keywords: 'procedure|10',
+    contains: [
+      hljs.TITLE_MODE,
+      {
+        className: 'params',
+        begin: /\(/, end: /\)/,
+        keywords: KEYWORDS,
+        contains: [STRING, CHAR_STRING]
+      }
+    ].concat(COMMENT_MODES)
+  };
+
+  var OBJECT = {
+    className: 'class',
+    begin: 'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\d+) ([^\\r\\n]+)',
+    returnBegin: true,
+    contains: [
+      hljs.TITLE_MODE,
+        PROCEDURE
+    ]
+  };
+
+  return {
+    case_insensitive: true,
+    keywords: { keyword: KEYWORDS, literal: LITERALS },
+    illegal: /\/\*/,
+    contains: [
+      STRING, CHAR_STRING,
+      DATE, DBL_QUOTED_VARIABLE,
+      hljs.NUMBER_MODE,
+      OBJECT,
+      PROCEDURE
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=cal.js.map?v=b8af51b081cf53a85f63

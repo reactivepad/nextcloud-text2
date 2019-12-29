@@ -1,2 +1,58 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[58],{340:function(e,n){e.exports=function(e){var n={className:"function",beginKeywords:"def",end:/[:={\[(\n;]/,excludeEnd:!0,contains:[{className:"title",begin:/[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/}]};return{keywords:{literal:"true false",keyword:"case class def else enum if impl import in lat rel index let match namespace switch type yield with"},contains:[e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,{className:"string",begin:/'(.|\\[xXuU][a-zA-Z0-9]+)'/},{className:"string",variants:[{begin:'"',end:'"'}]},n,e.C_NUMBER_MODE]}}}}]);
-//# sourceMappingURL=flix.js.map?v=d75c2c6983344ad86513
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/flix"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/flix.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/flix.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (hljs) {
+
+    var CHAR = {
+        className: 'string',
+        begin: /'(.|\\[xXuU][a-zA-Z0-9]+)'/
+    };
+
+    var STRING = {
+        className: 'string',
+        variants: [
+            {
+                begin: '"', end: '"'
+            }
+        ]
+    };
+
+    var NAME = {
+        className: 'title',
+        begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/
+    };
+
+    var METHOD = {
+        className: 'function',
+        beginKeywords: 'def',
+        end: /[:={\[(\n;]/,
+        excludeEnd: true,
+        contains: [NAME]
+    };
+
+    return {
+        keywords: {
+            literal: 'true false',
+            keyword: 'case class def else enum if impl import in lat rel index let match namespace switch type yield with'
+        },
+        contains: [
+            hljs.C_LINE_COMMENT_MODE,
+            hljs.C_BLOCK_COMMENT_MODE,
+            CHAR,
+            STRING,
+            METHOD,
+            hljs.C_NUMBER_MODE
+        ]
+    };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=flix.js.map?v=701c502f5d4b99131c1e

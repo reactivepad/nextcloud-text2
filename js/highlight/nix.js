@@ -1,2 +1,62 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[115],{397:function(e,n){e.exports=function(e){var n={keyword:"rec with let in inherit assert if else then",literal:"true false or and null",built_in:"import abort baseNameOf dirOf isNull builtins map removeAttrs throw toString derivation"},t={className:"subst",begin:/\$\{/,end:/}/,keywords:n},i={className:"string",contains:[t],variants:[{begin:"''",end:"''"},{begin:'"',end:'"'}]},s=[e.NUMBER_MODE,e.HASH_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,i,{begin:/[a-zA-Z0-9-_]+(\s*=)/,returnBegin:!0,relevance:0,contains:[{className:"attr",begin:/\S+/}]}];return t.contains=s,{aliases:["nixos"],keywords:n,contains:s}}}}]);
-//# sourceMappingURL=nix.js.map?v=5e81cbb7ec01fdcb9df1
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/nix"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/nix.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/nix.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var NIX_KEYWORDS = {
+    keyword:
+      'rec with let in inherit assert if else then',
+    literal:
+      'true false or and null',
+    built_in:
+      'import abort baseNameOf dirOf isNull builtins map removeAttrs throw ' +
+      'toString derivation'
+  };
+  var ANTIQUOTE = {
+    className: 'subst',
+    begin: /\$\{/,
+    end: /}/,
+    keywords: NIX_KEYWORDS
+  };
+  var ATTRS = {
+    begin: /[a-zA-Z0-9-_]+(\s*=)/, returnBegin: true,
+    relevance: 0,
+    contains: [
+      {
+        className: 'attr',
+        begin: /\S+/
+      }
+    ]
+  };
+  var STRING = {
+    className: 'string',
+    contains: [ANTIQUOTE],
+    variants: [
+      {begin: "''", end: "''"},
+      {begin: '"', end: '"'}
+    ]
+  };
+  var EXPRESSIONS = [
+    hljs.NUMBER_MODE,
+    hljs.HASH_COMMENT_MODE,
+    hljs.C_BLOCK_COMMENT_MODE,
+    STRING,
+    ATTRS
+  ];
+  ANTIQUOTE.contains = EXPRESSIONS;
+  return {
+    aliases: ["nixos"],
+    keywords: NIX_KEYWORDS,
+    contains: EXPRESSIONS
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=nix.js.map?v=a8ac42a752e836ccc2ce

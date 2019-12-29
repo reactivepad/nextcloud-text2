@@ -1,2 +1,313 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[189],{268:function(e,t,a){var s=a(557);"string"==typeof s&&(s=[[e.i,s,""]]),s.locals&&(e.exports=s.locals);(0,a(245).default)("2d3f4219",s,!0,{})},556:function(e,t,a){"use strict";var s=a(268);a.n(s).a},557:function(e,t,a){(e.exports=a(244)(!1)).push([e.i,"form.guest-name-dialog[data-v-af3e3a08]{display:flex;max-width:200px;margin:auto;margin-top:-2px;padding:3px}form.guest-name-dialog[data-v-af3e3a08] img{margin:0 !important}form.guest-name-dialog input[type=text][data-v-af3e3a08]{flex-grow:1}form.guest-name-dialog label[data-v-af3e3a08]{padding:3px;height:32px}\n",""])},564:function(e,t,a){"use strict";a.r(t);var s=a(249),n=a.n(s),i=a(282),o={name:"GuestNameDialog",components:{Avatar:a.n(i).a},directives:{tooltip:n.a},props:{syncService:{type:Object,default:null}},data:function(){return{guestName:"",guestNameBuffered:""}},computed:{avatarUrl:function(){var e=OC.generateUrl("/avatar/guest/{user}/{size}",{user:this.guestNameBuffered,size:32});return window.location.protocol+"//"+window.location.host+e}},beforeMount:function(){this.guestName=this.syncService.session.guestName,this.updateBufferedGuestName()},methods:{setGuestName:function(){var e=this,t=this.syncService.session.guestName;this.syncService.updateSession(this.guestName).then((function(){localStorage.setItem("nick",e.guestName),e.updateBufferedGuestName()})).catch((function(a){e.guestName=t}))},updateBufferedGuestName:function(){this.guestNameBuffered=this.guestName}}},u=(a(556),a(58)),r=Object(u.a)(o,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("form",{directives:[{name:"tooltip",rawName:"v-tooltip",value:e.t("text","Enter your name so other users can see who is editing"),expression:"t('text', 'Enter your name so other users can see who is editing')"}],staticClass:"guest-name-dialog",on:{submit:function(t){return t.preventDefault(),e.setGuestName()}}},[a("label",[a("Avatar",{attrs:{url:e.avatarUrl,"disable-tooltip":!0,size:32}})],1),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model",value:e.guestName,expression:"guestName"}],attrs:{type:"text","aria-label":e.t("text","Edit guest name")},domProps:{value:e.guestName},on:{input:function(t){t.target.composing||(e.guestName=t.target.value)}}}),e._v(" "),a("input",{staticClass:"icon-confirm",attrs:{type:"submit","aria-label":e.t("text","Save guest name")}})])}),[],!1,null,"af3e3a08",null);t.default=r.exports}}]);
-//# sourceMappingURL=editor-guest.js.map?v=b3c16651f52efac7435b
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["editor-guest"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GuestNameDialog.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var nextcloud_vue_dist_Directives_Tooltip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nextcloud-vue/dist/Directives/Tooltip */ "./node_modules/nextcloud-vue/dist/Directives/Tooltip.js");
+/* harmony import */ var nextcloud_vue_dist_Directives_Tooltip__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nextcloud_vue_dist_Directives_Tooltip__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nextcloud_vue_dist_Components_Avatar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nextcloud-vue/dist/Components/Avatar */ "./node_modules/nextcloud-vue/dist/Components/Avatar.js");
+/* harmony import */ var nextcloud_vue_dist_Components_Avatar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nextcloud_vue_dist_Components_Avatar__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'GuestNameDialog',
+  components: {
+    Avatar: nextcloud_vue_dist_Components_Avatar__WEBPACK_IMPORTED_MODULE_1___default.a
+  },
+  directives: {
+    tooltip: nextcloud_vue_dist_Directives_Tooltip__WEBPACK_IMPORTED_MODULE_0___default.a
+  },
+  props: {
+    syncService: {
+      type: Object,
+      default: null
+    }
+  },
+  data: function data() {
+    return {
+      guestName: '',
+      guestNameBuffered: ''
+    };
+  },
+  computed: {
+    avatarUrl: function avatarUrl() {
+      var size = 32;
+      var avatarUrl = OC.generateUrl('/avatar/guest/{user}/{size}', {
+        user: this.guestNameBuffered,
+        size: size
+      });
+      return window.location.protocol + '//' + window.location.host + avatarUrl;
+    }
+  },
+  beforeMount: function beforeMount() {
+    this.guestName = this.syncService.session.guestName;
+    this.updateBufferedGuestName();
+  },
+  methods: {
+    setGuestName: function setGuestName() {
+      var _this = this;
+
+      var previousGuestName = this.syncService.session.guestName;
+      this.syncService.updateSession(this.guestName).then(function () {
+        localStorage.setItem('nick', _this.guestName);
+
+        _this.updateBufferedGuestName();
+      }).catch(function (e) {
+        _this.guestName = previousGuestName;
+      });
+    },
+    updateBufferedGuestName: function updateBufferedGuestName() {
+      this.guestNameBuffered = this.guestName;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "form.guest-name-dialog[data-v-7371afaa] {\n  display: flex;\n  max-width: 200px;\n  margin: auto;\n  margin-top: -2px;\n  padding: 3px;\n}\nform.guest-name-dialog[data-v-7371afaa] img {\n    margin: 0 !important;\n}\nform.guest-name-dialog input[type=text][data-v-7371afaa] {\n    flex-grow: 1;\n}\nform.guest-name-dialog label[data-v-7371afaa] {\n    padding: 3px;\n    height: 32px;\n}\n", ""]);
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      directives: [
+        {
+          name: "tooltip",
+          rawName: "v-tooltip",
+          value: _vm.t(
+            "text",
+            "Enter your name so other users can see who is editing"
+          ),
+          expression:
+            "t('text', 'Enter your name so other users can see who is editing')"
+        }
+      ],
+      staticClass: "guest-name-dialog",
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.setGuestName()
+        }
+      }
+    },
+    [
+      _c(
+        "label",
+        [
+          _c("Avatar", {
+            attrs: { url: _vm.avatarUrl, "disable-tooltip": true, size: 32 }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.guestName,
+            expression: "guestName"
+          }
+        ],
+        attrs: { type: "text", "aria-label": _vm.t("text", "Edit guest name") },
+        domProps: { value: _vm.guestName },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.guestName = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "icon-confirm",
+        attrs: {
+          type: "submit",
+          "aria-label": _vm.t("text", "Save guest name")
+        }
+      })
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("d0f17472", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/GuestNameDialog.vue":
+/*!********************************************!*\
+  !*** ./src/components/GuestNameDialog.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true& */ "./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true&");
+/* harmony import */ var _GuestNameDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuestNameDialog.vue?vue&type=script&lang=js& */ "./src/components/GuestNameDialog.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& */ "./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _GuestNameDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "7371afaa",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/components/GuestNameDialog.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/components/GuestNameDialog.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./src/components/GuestNameDialog.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib!../../node_modules/vue-loader/lib??vue-loader-options!./GuestNameDialog.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&":
+/*!******************************************************************************************************!*\
+  !*** ./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-style-loader!../../node_modules/css-loader/dist/cjs.js!../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/vue-loader/lib??vue-loader-options!./GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=style&index=0&id=7371afaa&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_style_index_0_id_7371afaa_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true&":
+/*!***************************************************************************************!*\
+  !*** ./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/GuestNameDialog.vue?vue&type=template&id=7371afaa&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNameDialog_vue_vue_type_template_id_7371afaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=editor-guest.js.map?v=6c7e2b14fbc7d87c78b3

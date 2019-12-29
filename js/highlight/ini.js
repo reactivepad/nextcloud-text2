@@ -1,2 +1,81 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[80],{362:function(e,n){e.exports=function(e){var n={className:"string",contains:[e.BACKSLASH_ESCAPE],variants:[{begin:"'''",end:"'''",relevance:10},{begin:'"""',end:'"""',relevance:10},{begin:'"',end:'"'},{begin:"'",end:"'"}]};return{aliases:["toml"],case_insensitive:!0,illegal:/\S/,contains:[e.COMMENT(";","$"),e.HASH_COMMENT_MODE,{className:"section",begin:/^\s*\[+/,end:/\]+/},{begin:/^[a-z0-9\[\]_\.-]+\s*=\s*/,end:"$",returnBegin:!0,contains:[{className:"attr",begin:/[a-z0-9\[\]_\.-]+/},{begin:/=/,endsWithParent:!0,relevance:0,contains:[e.COMMENT(";","$"),e.HASH_COMMENT_MODE,{className:"literal",begin:/\bon|off|true|false|yes|no\b/},{className:"variable",variants:[{begin:/\$[\w\d"][\w\d_]*/},{begin:/\$\{(.*?)}/}]},n,{className:"number",begin:/([\+\-]+)?[\d]+_[\d_]+/},e.NUMBER_MODE]}]}]}}}}]);
-//# sourceMappingURL=ini.js.map?v=1813de9f29c14eef842b
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/ini"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/ini.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/ini.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var STRING = {
+    className: "string",
+    contains: [hljs.BACKSLASH_ESCAPE],
+    variants: [
+      {
+        begin: "'''", end: "'''",
+        relevance: 10
+      }, {
+        begin: '"""', end: '"""',
+        relevance: 10
+      }, {
+        begin: '"', end: '"'
+      }, {
+        begin: "'", end: "'"
+      }
+    ]
+  };
+  return {
+    aliases: ['toml'],
+    case_insensitive: true,
+    illegal: /\S/,
+    contains: [
+      hljs.COMMENT(';', '$'),
+      hljs.HASH_COMMENT_MODE,
+      {
+        className: 'section',
+        begin: /^\s*\[+/, end: /\]+/
+      },
+      {
+        begin: /^[a-z0-9\[\]_\.-]+\s*=\s*/, end: '$',
+        returnBegin: true,
+        contains: [
+          {
+            className: 'attr',
+            begin: /[a-z0-9\[\]_\.-]+/
+          },
+          {
+            begin: /=/, endsWithParent: true,
+            relevance: 0,
+            contains: [
+              hljs.COMMENT(';', '$'),
+              hljs.HASH_COMMENT_MODE,
+              {
+                className: 'literal',
+                begin: /\bon|off|true|false|yes|no\b/
+              },
+              {
+                className: 'variable',
+                variants: [
+                  {begin: /\$[\w\d"][\w\d_]*/},
+                  {begin: /\$\{(.*?)}/}
+                ]
+              },
+              STRING,
+              {
+                className: 'number',
+                begin: /([\+\-]+)?[\d]+_[\d_]+/
+              },
+              hljs.NUMBER_MODE
+            ]
+          }
+        ]
+      }
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=ini.js.map?v=40c7686252b6c89cca8c

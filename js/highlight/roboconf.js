@@ -1,2 +1,80 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[142],{424:function(n,e){n.exports=function(n){var e="[a-zA-Z-_][^\\n{]+\\{",a={className:"attribute",begin:/[a-zA-Z-_]+/,end:/\s*:/,excludeEnd:!0,starts:{end:";",relevance:0,contains:[{className:"variable",begin:/\.[a-zA-Z-_]+/},{className:"keyword",begin:/\(optional\)/}]}};return{aliases:["graph","instances"],case_insensitive:!0,keywords:"import",contains:[{begin:"^facet "+e,end:"}",keywords:"facet",contains:[a,n.HASH_COMMENT_MODE]},{begin:"^\\s*instance of "+e,end:"}",keywords:"name count channels instance-data instance-state instance of",illegal:/\S/,contains:["self",a,n.HASH_COMMENT_MODE]},{begin:"^"+e,end:"}",contains:[a,n.HASH_COMMENT_MODE]},n.HASH_COMMENT_MODE]}}}}]);
-//# sourceMappingURL=roboconf.js.map?v=5b971f76bae54492723e
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/roboconf"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/roboconf.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/roboconf.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var IDENTIFIER = '[a-zA-Z-_][^\\n{]+\\{';
+
+  var PROPERTY = {
+    className: 'attribute',
+    begin: /[a-zA-Z-_]+/, end: /\s*:/, excludeEnd: true,
+    starts: {
+      end: ';',
+      relevance: 0,
+      contains: [
+        {
+          className: 'variable',
+          begin: /\.[a-zA-Z-_]+/
+        },
+        {
+          className: 'keyword',
+          begin: /\(optional\)/
+        }
+      ]
+    }
+  };
+
+  return {
+    aliases: ['graph', 'instances'],
+    case_insensitive: true,
+    keywords: 'import',
+    contains: [
+      // Facet sections
+      {
+        begin: '^facet ' + IDENTIFIER,
+        end: '}',
+        keywords: 'facet',
+        contains: [
+          PROPERTY,
+          hljs.HASH_COMMENT_MODE
+        ]
+      },
+
+      // Instance sections
+      {
+        begin: '^\\s*instance of ' + IDENTIFIER,
+        end: '}',
+        keywords: 'name count channels instance-data instance-state instance of',
+        illegal: /\S/,
+        contains: [
+          'self',
+          PROPERTY,
+          hljs.HASH_COMMENT_MODE
+        ]
+      },
+
+      // Component sections
+      {
+        begin: '^' + IDENTIFIER,
+        end: '}',
+        contains: [
+          PROPERTY,
+          hljs.HASH_COMMENT_MODE
+        ]
+      },
+
+      // Comments
+      hljs.HASH_COMMENT_MODE
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=roboconf.js.map?v=3512271c909e6d469cbd

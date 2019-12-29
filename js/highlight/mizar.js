@@ -1,2 +1,32 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[108],{390:function(e,t){e.exports=function(e){return{keywords:"environ vocabularies notations constructors definitions registrations theorems schemes requirements begin end definition registration cluster existence pred func defpred deffunc theorem proof let take assume then thus hence ex for st holds consider reconsider such that and in provided of as from be being by means equals implies iff redefine define now not or attr is mode suppose per cases set thesis contradiction scheme reserve struct correctness compatibility coherence symmetry assymetry reflexivity irreflexivity connectedness uniqueness commutativity idempotence involutiveness projectivity",contains:[e.COMMENT("::","$")]}}}}]);
-//# sourceMappingURL=mizar.js.map?v=5784d3d92b773479f64f
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/mizar"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/mizar.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/mizar.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  return {
+    keywords:
+      'environ vocabularies notations constructors definitions ' +
+      'registrations theorems schemes requirements begin end definition ' +
+      'registration cluster existence pred func defpred deffunc theorem ' +
+      'proof let take assume then thus hence ex for st holds consider ' +
+      'reconsider such that and in provided of as from be being by means ' +
+      'equals implies iff redefine define now not or attr is mode ' +
+      'suppose per cases set thesis contradiction scheme reserve struct ' +
+      'correctness compatibility coherence symmetry assymetry ' +
+      'reflexivity irreflexivity connectedness uniqueness commutativity ' +
+      'idempotence involutiveness projectivity',
+    contains: [
+      hljs.COMMENT('::', '$')
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=mizar.js.map?v=db1aa880afdc4988f0c0

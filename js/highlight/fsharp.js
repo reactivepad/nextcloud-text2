@@ -1,2 +1,72 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[60],{342:function(e,n){e.exports=function(e){var n={begin:"<",end:">",contains:[e.inherit(e.TITLE_MODE,{begin:/'[a-zA-Z0-9_]+/})]};return{aliases:["fs"],keywords:"abstract and as assert base begin class default delegate do done downcast downto elif else end exception extern false finally for fun function global if in inherit inline interface internal lazy let match member module mutable namespace new null of open or override private public rec return sig static struct then to true try type upcast use val void when while with yield",illegal:/\/\*/,contains:[{className:"keyword",begin:/\b(yield|return|let|do)!/},{className:"string",begin:'@"',end:'"',contains:[{begin:'""'}]},{className:"string",begin:'"""',end:'"""'},e.COMMENT("\\(\\*","\\*\\)"),{className:"class",beginKeywords:"type",end:"\\(|=|$",excludeEnd:!0,contains:[e.UNDERSCORE_TITLE_MODE,n]},{className:"meta",begin:"\\[<",end:">\\]",relevance:10},{className:"symbol",begin:"\\B('[A-Za-z])\\b",contains:[e.BACKSLASH_ESCAPE]},e.C_LINE_COMMENT_MODE,e.inherit(e.QUOTE_STRING_MODE,{illegal:null}),e.C_NUMBER_MODE]}}}}]);
-//# sourceMappingURL=fsharp.js.map?v=507fc6bd56c1bf2deaf1
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/fsharp"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/fsharp.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/fsharp.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var TYPEPARAM = {
+    begin: '<', end: '>',
+    contains: [
+      hljs.inherit(hljs.TITLE_MODE, {begin: /'[a-zA-Z0-9_]+/})
+    ]
+  };
+
+  return {
+    aliases: ['fs'],
+    keywords:
+      'abstract and as assert base begin class default delegate do done ' +
+      'downcast downto elif else end exception extern false finally for ' +
+      'fun function global if in inherit inline interface internal lazy let ' +
+      'match member module mutable namespace new null of open or ' +
+      'override private public rec return sig static struct then to ' +
+      'true try type upcast use val void when while with yield',
+    illegal: /\/\*/,
+    contains: [
+      {
+        // monad builder keywords (matches before non-bang kws)
+        className: 'keyword',
+        begin: /\b(yield|return|let|do)!/
+      },
+      {
+        className: 'string',
+        begin: '@"', end: '"',
+        contains: [{begin: '""'}]
+      },
+      {
+        className: 'string',
+        begin: '"""', end: '"""'
+      },
+      hljs.COMMENT('\\(\\*', '\\*\\)'),
+      {
+        className: 'class',
+        beginKeywords: 'type', end: '\\(|=|$', excludeEnd: true,
+        contains: [
+          hljs.UNDERSCORE_TITLE_MODE,
+          TYPEPARAM
+        ]
+      },
+      {
+        className: 'meta',
+        begin: '\\[<', end: '>\\]',
+        relevance: 10
+      },
+      {
+        className: 'symbol',
+        begin: '\\B(\'[A-Za-z])\\b',
+        contains: [hljs.BACKSLASH_ESCAPE]
+      },
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+      hljs.C_NUMBER_MODE
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=fsharp.js.map?v=b5a6af57d8f9fa89a069

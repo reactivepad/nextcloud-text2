@@ -1,2 +1,49 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[166],{448:function(n,e){n.exports=function(n){return{case_insensitive:!0,contains:[n.HASH_COMMENT_MODE,{className:"meta",variants:[{begin:"^TAP version (\\d+)$"},{begin:"^1\\.\\.(\\d+)$"}]},{begin:"(s+)?---$",end:"\\.\\.\\.$",subLanguage:"yaml",relevance:0},{className:"number",begin:" (\\d+) "},{className:"symbol",variants:[{begin:"^ok"},{begin:"^not ok"}]}]}}}}]);
-//# sourceMappingURL=tap.js.map?v=2ef663ec906e3683553a
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/tap"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/tap.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/tap.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  return {
+    case_insensitive: true,
+    contains: [
+      hljs.HASH_COMMENT_MODE,
+      // version of format and total amount of testcases
+      {
+        className: 'meta',
+        variants: [
+          { begin: '^TAP version (\\d+)$' },
+          { begin: '^1\\.\\.(\\d+)$' }
+        ],
+      },
+      // YAML block
+      {
+        begin: '(\s+)?---$', end: '\\.\\.\\.$',
+        subLanguage: 'yaml',
+        relevance: 0
+      },
+	  // testcase number
+      {
+        className: 'number',
+        begin: ' (\\d+) '
+      },
+	  // testcase status and description
+      {
+        className: 'symbol',
+        variants: [
+          { begin: '^ok' },
+          { begin: '^not ok' }
+        ],
+      },
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=tap.js.map?v=a70bd2ce171d8e15d1e0

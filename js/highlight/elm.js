@@ -1,2 +1,103 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[52],{334:function(e,n){e.exports=function(e){var n={variants:[e.COMMENT("--","$"),e.COMMENT("{-","-}",{contains:["self"]})]},i={className:"type",begin:"\\b[A-Z][\\w']*",relevance:0},o={begin:"\\(",end:"\\)",illegal:'"',contains:[{className:"type",begin:"\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?"},n]};return{keywords:"let in if then else case of where module import exposing type alias as infix infixl infixr port effect command subscription",contains:[{beginKeywords:"port effect module",end:"exposing",keywords:"port effect module where command subscription exposing",contains:[o,n],illegal:"\\W\\.|;"},{begin:"import",end:"$",keywords:"import as exposing",contains:[o,n],illegal:"\\W\\.|;"},{begin:"type",end:"$",keywords:"type alias",contains:[i,o,{begin:"{",end:"}",contains:o.contains},n]},{beginKeywords:"infix infixl infixr",end:"$",contains:[e.C_NUMBER_MODE,n]},{begin:"port",end:"$",keywords:"port",contains:[n]},{className:"string",begin:"'\\\\?.",end:"'",illegal:"."},e.QUOTE_STRING_MODE,e.C_NUMBER_MODE,i,e.inherit(e.TITLE_MODE,{begin:"^[_a-z][\\w']*"}),n,{begin:"->|<-"}],illegal:/;/}}}}]);
-//# sourceMappingURL=elm.js.map?v=335c010b386fbc931c12
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/elm"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/elm.js":
+/*!********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/elm.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var COMMENT = {
+    variants: [
+      hljs.COMMENT('--', '$'),
+      hljs.COMMENT(
+        '{-',
+        '-}',
+        {
+          contains: ['self']
+        }
+      )
+    ]
+  };
+
+  var CONSTRUCTOR = {
+    className: 'type',
+    begin: '\\b[A-Z][\\w\']*', // TODO: other constructors (built-in, infix).
+    relevance: 0
+  };
+
+  var LIST = {
+    begin: '\\(', end: '\\)',
+    illegal: '"',
+    contains: [
+      {className: 'type', begin: '\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?'},
+      COMMENT
+    ]
+  };
+
+  var RECORD = {
+    begin: '{', end: '}',
+    contains: LIST.contains
+  };
+
+  var CHARACTER = {
+    className: 'string',
+    begin: '\'\\\\?.', end: '\'',
+    illegal: '.'
+  };
+
+  return {
+    keywords:
+      'let in if then else case of where module import exposing ' +
+      'type alias as infix infixl infixr port effect command subscription',
+    contains: [
+
+      // Top-level constructions.
+
+      {
+        beginKeywords: 'port effect module', end: 'exposing',
+        keywords: 'port effect module where command subscription exposing',
+        contains: [LIST, COMMENT],
+        illegal: '\\W\\.|;'
+      },
+      {
+        begin: 'import', end: '$',
+        keywords: 'import as exposing',
+        contains: [LIST, COMMENT],
+        illegal: '\\W\\.|;'
+      },
+      {
+        begin: 'type', end: '$',
+        keywords: 'type alias',
+        contains: [CONSTRUCTOR, LIST, RECORD, COMMENT]
+      },
+      {
+        beginKeywords: 'infix infixl infixr', end: '$',
+        contains: [hljs.C_NUMBER_MODE, COMMENT]
+      },
+      {
+        begin: 'port', end: '$',
+        keywords: 'port',
+        contains: [COMMENT]
+      },
+
+      // Literals and names.
+
+      CHARACTER,
+      hljs.QUOTE_STRING_MODE,
+      hljs.C_NUMBER_MODE,
+      CONSTRUCTOR,
+      hljs.inherit(hljs.TITLE_MODE, {begin: '^[_a-z][\\w\']*'}),
+      COMMENT,
+
+      {begin: '->|<-'} // No markup, relevance booster
+    ],
+    illegal: /;/
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=elm.js.map?v=59a53f06394a4c945613

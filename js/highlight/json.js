@@ -1,2 +1,50 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[86],{368:function(n,e){n.exports=function(n){var e={literal:"true false null"},i=[n.QUOTE_STRING_MODE,n.C_NUMBER_MODE],t={end:",",endsWithParent:!0,excludeEnd:!0,contains:i,keywords:e},l={begin:"{",end:"}",contains:[{className:"attr",begin:/"/,end:/"/,contains:[n.BACKSLASH_ESCAPE],illegal:"\\n"},n.inherit(t,{begin:/:/})],illegal:"\\S"},a={begin:"\\[",end:"\\]",contains:[n.inherit(t)],illegal:"\\S"};return i.splice(i.length,0,l,a),{contains:i,keywords:e,illegal:"\\S"}}}}]);
-//# sourceMappingURL=json.js.map?v=13b7f180d33a69d6097a
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/json"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/json.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/json.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var LITERALS = {literal: 'true false null'};
+  var TYPES = [
+    hljs.QUOTE_STRING_MODE,
+    hljs.C_NUMBER_MODE
+  ];
+  var VALUE_CONTAINER = {
+    end: ',', endsWithParent: true, excludeEnd: true,
+    contains: TYPES,
+    keywords: LITERALS
+  };
+  var OBJECT = {
+    begin: '{', end: '}',
+    contains: [
+      {
+        className: 'attr',
+        begin: /"/, end: /"/,
+        contains: [hljs.BACKSLASH_ESCAPE],
+        illegal: '\\n',
+      },
+      hljs.inherit(VALUE_CONTAINER, {begin: /:/})
+    ],
+    illegal: '\\S'
+  };
+  var ARRAY = {
+    begin: '\\[', end: '\\]',
+    contains: [hljs.inherit(VALUE_CONTAINER)], // inherit is a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents
+    illegal: '\\S'
+  };
+  TYPES.splice(TYPES.length, 0, OBJECT, ARRAY);
+  return {
+    contains: TYPES,
+    keywords: LITERALS,
+    illegal: '\\S'
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=json.js.map?v=363a06989580245a4305

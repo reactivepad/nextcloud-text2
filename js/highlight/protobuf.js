@@ -1,2 +1,49 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[133],{415:function(e,n){e.exports=function(e){return{keywords:{keyword:"package import option optional required repeated group oneof",built_in:"double float int32 int64 uint32 uint64 sint32 sint64 fixed32 fixed64 sfixed32 sfixed64 bool string bytes",literal:"true false"},contains:[e.QUOTE_STRING_MODE,e.NUMBER_MODE,e.C_LINE_COMMENT_MODE,{className:"class",beginKeywords:"message enum service",end:/\{/,illegal:/\n/,contains:[e.inherit(e.TITLE_MODE,{starts:{endsWithParent:!0,excludeEnd:!0}})]},{className:"function",beginKeywords:"rpc",end:/;/,excludeEnd:!0,keywords:"rpc returns"},{begin:/^\s*[A-Z_]+/,end:/\s*=/,excludeEnd:!0}]}}}}]);
-//# sourceMappingURL=protobuf.js.map?v=5f86bfed704961539160
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/protobuf"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/protobuf.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/protobuf.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  return {
+    keywords: {
+      keyword: 'package import option optional required repeated group oneof',
+      built_in: 'double float int32 int64 uint32 uint64 sint32 sint64 ' +
+        'fixed32 fixed64 sfixed32 sfixed64 bool string bytes',
+      literal: 'true false'
+    },
+    contains: [
+      hljs.QUOTE_STRING_MODE,
+      hljs.NUMBER_MODE,
+      hljs.C_LINE_COMMENT_MODE,
+      {
+        className: 'class',
+        beginKeywords: 'message enum service', end: /\{/,
+        illegal: /\n/,
+        contains: [
+          hljs.inherit(hljs.TITLE_MODE, {
+            starts: {endsWithParent: true, excludeEnd: true} // hack: eating everything after the first title
+          })
+        ]
+      },
+      {
+        className: 'function',
+        beginKeywords: 'rpc',
+        end: /;/, excludeEnd: true,
+        keywords: 'rpc returns'
+      },
+      {
+        begin: /^\s*[A-Z_]+/,
+        end: /\s*=/, excludeEnd: true
+      }
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=protobuf.js.map?v=134dac76706ad6761465

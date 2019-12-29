@@ -1,2 +1,70 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[79],{361:function(e,n){e.exports=function(e){return{aliases:["i7"],case_insensitive:!0,keywords:{keyword:"thing room person man woman animal container supporter backdrop door scenery open closed locked inside gender is are say understand kind of rule"},contains:[{className:"string",begin:'"',end:'"',relevance:0,contains:[{className:"subst",begin:"\\[",end:"\\]"}]},{className:"section",begin:/^(Volume|Book|Part|Chapter|Section|Table)\b/,end:"$"},{begin:/^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\b/,end:":",contains:[{begin:"\\(This",end:"\\)"}]},{className:"comment",begin:"\\[",end:"\\]",contains:["self"]}]}}}}]);
-//# sourceMappingURL=inform7.js.map?v=f96a481038042d2af200
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/inform7"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/inform7.js":
+/*!************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/inform7.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var START_BRACKET = '\\[';
+  var END_BRACKET = '\\]';
+  return {
+    aliases: ['i7'],
+    case_insensitive: true,
+    keywords: {
+      // Some keywords more or less unique to I7, for relevance.
+      keyword:
+        // kind:
+        'thing room person man woman animal container ' +
+        'supporter backdrop door ' +
+        // characteristic:
+        'scenery open closed locked inside gender ' +
+        // verb:
+        'is are say understand ' +
+        // misc keyword:
+        'kind of rule'
+    },
+    contains: [
+      {
+        className: 'string',
+        begin: '"', end: '"',
+        relevance: 0,
+        contains: [
+          {
+            className: 'subst',
+            begin: START_BRACKET, end: END_BRACKET
+          }
+        ]
+      },
+      {
+        className: 'section',
+        begin: /^(Volume|Book|Part|Chapter|Section|Table)\b/,
+        end: '$'
+      },
+      {
+        // Rule definition
+        // This is here for relevance.
+        begin: /^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\b/,
+        end: ':',
+        contains: [
+          {
+            //Rule name
+            begin: '\\(This', end: '\\)'
+          }
+        ]
+      },
+      {
+        className: 'comment',
+        begin: START_BRACKET, end: END_BRACKET,
+        contains: ['self']
+      }
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=inform7.js.map?v=6aac8192eadf13346111

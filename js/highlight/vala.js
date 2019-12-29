@@ -1,2 +1,63 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[173],{455:function(e,t){e.exports=function(e){return{keywords:{keyword:"char uchar unichar int uint long ulong short ushort int8 int16 int32 int64 uint8 uint16 uint32 uint64 float double bool struct enum string void weak unowned owned async signal static abstract interface override virtual delegate if while do for foreach else switch case break default return try catch public private protected internal using new this get set const stdout stdin stderr var",built_in:"DBus GLib CCode Gee Object Gtk Posix",literal:"false true null"},contains:[{className:"class",beginKeywords:"class interface namespace",end:"{",excludeEnd:!0,illegal:"[^,:\\n\\s\\.]",contains:[e.UNDERSCORE_TITLE_MODE]},e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,{className:"string",begin:'"""',end:'"""',relevance:5},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,e.C_NUMBER_MODE,{className:"meta",begin:"^#",end:"$",relevance:2}]}}}}]);
-//# sourceMappingURL=vala.js.map?v=c29258544ebd598ceb8e
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/vala"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/vala.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/vala.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  return {
+    keywords: {
+      keyword:
+        // Value types
+        'char uchar unichar int uint long ulong short ushort int8 int16 int32 int64 uint8 ' +
+        'uint16 uint32 uint64 float double bool struct enum string void ' +
+        // Reference types
+        'weak unowned owned ' +
+        // Modifiers
+        'async signal static abstract interface override virtual delegate ' +
+        // Control Structures
+        'if while do for foreach else switch case break default return try catch ' +
+        // Visibility
+        'public private protected internal ' +
+        // Other
+        'using new this get set const stdout stdin stderr var',
+      built_in:
+        'DBus GLib CCode Gee Object Gtk Posix',
+      literal:
+        'false true null'
+    },
+    contains: [
+      {
+        className: 'class',
+        beginKeywords: 'class interface namespace', end: '{', excludeEnd: true,
+        illegal: '[^,:\\n\\s\\.]',
+        contains: [
+          hljs.UNDERSCORE_TITLE_MODE
+        ]
+      },
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
+      {
+        className: 'string',
+        begin: '"""', end: '"""',
+        relevance: 5
+      },
+      hljs.APOS_STRING_MODE,
+      hljs.QUOTE_STRING_MODE,
+      hljs.C_NUMBER_MODE,
+      {
+        className: 'meta',
+        begin: '^#', end: '$',
+        relevance: 2
+      }
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=vala.js.map?v=6a70314663885fe81bf8

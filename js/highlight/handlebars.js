@@ -1,2 +1,47 @@
-(window.textWebpackJsonp=window.textWebpackJsonp||[]).push([[72],{354:function(e,n){e.exports=function(e){var n={"builtin-name":"each in with if else unless bindattr action collection debugger log outlet template unbound view yield"};return{aliases:["hbs","html.hbs","html.handlebars"],case_insensitive:!0,subLanguage:"xml",contains:[e.COMMENT("{{!(--)?","(--)?}}"),{className:"template-tag",begin:/\{\{[#\/]/,end:/\}\}/,contains:[{className:"name",begin:/[a-zA-Z\.-]+/,keywords:n,starts:{endsWithParent:!0,relevance:0,contains:[e.QUOTE_STRING_MODE]}}]},{className:"template-variable",begin:/\{\{/,end:/\}\}/,keywords:n}]}}}}]);
-//# sourceMappingURL=handlebars.js.map?v=499d389906d7cb99a753
+(window["textWebpackJsonp"] = window["textWebpackJsonp"] || []).push([["highlight/handlebars"],{
+
+/***/ "./node_modules/highlight.js/lib/languages/handlebars.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/highlight.js/lib/languages/handlebars.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(hljs) {
+  var BUILT_INS = {'builtin-name': 'each in with if else unless bindattr action collection debugger log outlet template unbound view yield'};
+  return {
+    aliases: ['hbs', 'html.hbs', 'html.handlebars'],
+    case_insensitive: true,
+    subLanguage: 'xml',
+    contains: [
+    hljs.COMMENT('{{!(--)?', '(--)?}}'),
+      {
+        className: 'template-tag',
+        begin: /\{\{[#\/]/, end: /\}\}/,
+        contains: [
+          {
+            className: 'name',
+            begin: /[a-zA-Z\.-]+/,
+            keywords: BUILT_INS,
+            starts: {
+              endsWithParent: true, relevance: 0,
+              contains: [
+                hljs.QUOTE_STRING_MODE
+              ]
+            }
+          }
+        ]
+      },
+      {
+        className: 'template-variable',
+        begin: /\{\{/, end: /\}\}/,
+        keywords: BUILT_INS
+      }
+    ]
+  };
+};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=handlebars.js.map?v=b46b59ad957efc9c117d
