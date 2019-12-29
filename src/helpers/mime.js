@@ -20,28 +20,6 @@
  *
  */
 
-const openMimetypesMarkdown = [
-	'text/markdown'
-]
+const openMimetypes = ["application/reactivepad"];
 
-const openMimetypesPlainText = [
-	'text/plain',
-	'application/cmd',
-	'application/javascript',
-	'application/json',
-	'application/xml',
-	'application/x-empty',
-	'application/x-msdos-program',
-	'application/x-php',
-	'application/x-pearl',
-	'application/x-text',
-	'application/yaml'
-]
-
-const openMimetypes = [...openMimetypesMarkdown, ...openMimetypesPlainText]
-
-export {
-	openMimetypes,
-	openMimetypesMarkdown,
-	openMimetypesPlainText
-}
+export { openMimetypes };

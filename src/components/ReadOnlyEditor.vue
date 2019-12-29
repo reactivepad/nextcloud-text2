@@ -27,7 +27,7 @@
 <script>
 import { EditorContent } from 'tiptap'
 import escapeHtml from 'escape-html'
-import { createEditor, markdownit } from '../EditorFactory'
+import { createEditor } from '../EditorFactory'
 
 export default {
 	name: 'ReadOnlyEditor',
@@ -49,7 +49,7 @@ export default {
 	},
 	mounted() {
 		this.editor = createEditor({
-			content: this.isRichEditor ? markdownit.render(this.content) : '<pre>' + escapeHtml(this.content) + '</pre>',
+			content: this.isRichEditor ? this.content : '<pre>' + escapeHtml(this.content) + '</pre>',
 			enableRichEditing: this.isRichEditor
 		})
 		this.editor.setOptions({ editable: false })

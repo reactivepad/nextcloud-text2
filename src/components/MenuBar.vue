@@ -24,6 +24,8 @@
 	<EditorMenuBar v-slot="{ commands, isActive }" :editor="editor">
 		<div class="menubar">
 			<div v-if="isRichEditor" ref="menubar" class="menubar-icons">
+				<button class="rxpButton" @click="rxpClickButton(0, editor)">Formula</button>
+				<button class="rxpButton" @click="rxpClickButton(1, editor)">Table</button>
 				<template v-for="(icon, $index) in allIcons">
 					<button v-if="icon.class"
 						v-show="$index < iconCount"
@@ -74,6 +76,7 @@
 <script>
 import { EditorMenuBar } from 'tiptap'
 import Tooltip from 'nextcloud-vue/dist/Directives/Tooltip'
+import { menuItems } from '@reactivepad/prosemirror'
 import menuBarIcons from './../mixins/menubar'
 import { fetchFileInfo } from './../helpers/files'
 
@@ -204,6 +207,9 @@ export default {
 		clickIcon(commands, icon) {
 			return icon.action(commands)
 		},
+		rxpClickButton(i, editor) {
+			menuItems[i].run(editor.state, editor.view.dispatch);
+		},
 		getWindowWidth(event) {
 			this.windowWidth = document.documentElement.clientWidth
 		},
@@ -295,6 +301,10 @@ export default {
 		&.icon-undo, &.icon-redo {
 			opacity: .4;
 		}
+	}
+
+	.rxpButton {
+		width: auto !important;
 	}
 
 	.menubar .submenu {

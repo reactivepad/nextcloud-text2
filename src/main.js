@@ -15,7 +15,7 @@ if (document.getElementById('maineditor')) {
 		const vm = new Vue({
 			render: h => h(Editor, {
 				props: {
-					relativePath: '/welcome.md',
+					relativePath: '/welcome.rxp',
 					active: true
 				}
 			})
