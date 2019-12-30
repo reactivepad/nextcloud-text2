@@ -105,7 +105,7 @@ const createEditor = ({
     ];
   }
   extensions = extensions || [];
-  const rpPlugin = buildPlugin();
+  const rpPlugin = buildPlugin({ tableRenderDelay: 3000 });
   return new Editor({
     content: content,
     onInit: onInit,
